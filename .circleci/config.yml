@@ -16,6 +16,9 @@ jobs:
       - run:
           name: karma-cli
           command: npm install -g karma-cli
+      - run:
+          name: jasmine
+          command: npm install -g jasmine          
       - restore_cache:
           key: dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
       - run:

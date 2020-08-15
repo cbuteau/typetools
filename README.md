@@ -6,7 +6,25 @@ A port of typecodes to ES6
 I did a lot of work and testing of typecodes and no one used it.
 Maybe if I port the work to es6 someone will.
 
-TO write and test in ES6.
+
+# Badges
+
+### Coveralls
+
+[![Coverage Status](https://coveralls.io/repos/github/cbuteau/typecodes/badge.svg)](https://coveralls.io/github/cbuteau/typetools)
+
+### Circle CI Build
+
+[![CircleCI](https://circleci.com/gh/cbuteau/typetools.svg?style=svg)](https://circleci.com/gh/cbuteau/typetools)
+
+### npm Version
+
+[![npm version](http://img.shields.io/npm/v/typetools.svg?style=flat)](https://npmjs.org/package/typetools "View this project on npm")
+
+
+### npm big badge
+
+[![NPM](https://nodei.co/npm/typetools.png)](https://nodei.co/npm/typetools/)
 
 
 ## Design
