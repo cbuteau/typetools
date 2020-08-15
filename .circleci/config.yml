@@ -1,13 +1,13 @@
-version: 2.1
+version: 2
 
-orbs:
-  win: circleci/windows@2.2.0
+# orbs:
+#   win: circleci/windows@2.2.0
 
 jobs:
   build:
-    executor:
-      name: win/default
-      shell: powershell.exe
+    # executor:
+    #   name: win/default
+    #   shell: powershell.exe
     working_directory: ~/gitsrc
     docker:
       - image: circleci/node:jessie-browsers
@@ -17,7 +17,6 @@ jobs:
       COVERALLS_REPO_TOKEN: HICc0XwxeBruKFxp0BdCKfGLIHGGTYQhg
     steps:
       - checkout
-      - run: systeminfo
       - run:
           name: setup-for-karma
           command: npm set prefix=/home/circleci/npm && echo 'export PATH=$HOME/circleci/npm/bin:$PATH' >> /home/circleci/.bashrc
