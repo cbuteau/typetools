@@ -31,6 +31,9 @@ jobs:
       - run:
           name: jspm
           command: npm install -g jspm
+      - run:
+          name: npm
+          command: npm install -g npm
       - restore_cache:
           key: dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
       - run:

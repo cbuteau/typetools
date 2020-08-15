@@ -11,7 +11,7 @@ Maybe if I port the work to es6 someone will.
 
 ### Coveralls
 
-[![Coverage Status](https://coveralls.io/repos/github/cbuteau/typecodes/badge.svg)](https://coveralls.io/github/cbuteau/typetools)
+[![Coverage Status](https://coveralls.io/repos/github/cbuteau/typetools/badge.svg)](https://coveralls.io/github/cbuteau/typetools)
 
 ### Circle CI Build
 
