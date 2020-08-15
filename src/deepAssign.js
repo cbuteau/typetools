@@ -1,4 +1,13 @@
 
+import {TYPECODES} from "./codes.js";
+import {getTypeCode} from "./get.js";
+import {isTypeCode} from "./is.js";
+
+function isNotThere(value) {
+  var code = getTypeCode(value);
+  return code === TYPECODES.UNDEFINED || code === TYPECODES.NULL;
+}
+
 function isAllValueTypes(obj) {
   var propKeys = Object.keys(obj);
   for (var i = 0; i < propKeys.length; i++) {

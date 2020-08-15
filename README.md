@@ -28,3 +28,13 @@ https://github.com/karma-runner/karma/issues/3335
 https://github.com/open-wc/open-wc/tree/master/packages/karma-esm
 
 Still getting 404 on import instruction in test file.
+
+#### 11:04
+
+Need to figure out coverage setup.
+https://medium.com/@gunnarlium/es6-code-coverage-with-babel-jspm-karma-jasmine-and-istanbul-2c1918c5bb23
+And we need to figure out packaging and minifying...
+https://www.reddit.com/r/javascript/comments/54atmc/how_to_minify_es6/
+
+Maybe this...
+https://github.com/babel/minify

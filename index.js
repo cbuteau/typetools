@@ -13,11 +13,27 @@ class Library {
   }
 }
 
-Library.prototype.get = getTypeCode;
-Library.prototype.str = debugStringForTypeCode;
-Library.prototype.is = isTypeCode;
-Library.prototype.compare = compare;
-Library.prototype.deepAssign = deepAssign;
+Object.assign(Library.prototype, {
+  get: getTypeCode,
+  str: debugStringForTypeCode,
+  is: isTypeCode,
+  compare: compare,
+  deepAssign: deepAssign
+});
+
+// Library.prototype = {
+//   get: getTypeCode,
+//   str: debugStringForTypeCode,
+//   is: isTypeCode,
+//   compare: compare,
+//   deepAssign: deepAssign
+// };
+
+// Library.prototype.get = getTypeCode;
+// Library.prototype.str = debugStringForTypeCode;
+// Library.prototype.is = isTypeCode;
+// Library.prototype.compare = compare;
+// Library.prototype.deepAssign = deepAssign;
 
 const typetools = new Library();
 export { typetools };

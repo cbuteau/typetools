@@ -1,4 +1,6 @@
 
+import {TYPECODES} from "./codes.js";
+
 export function debugStringForTypeCode(typecode) {
   var result = 'unmapped';
   switch (typecode) {

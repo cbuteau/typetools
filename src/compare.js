@@ -4,6 +4,10 @@ import {getTypeCode} from "./get.js";
 
 const DEFAULT_EPSILON = 0.001;
 
+function isFloat(value) {
+  return value % 1 !== 0;
+}
+
 function compareFloats(floatOne, floatTwo, options) {
    return (Math.abs(floatOne - floatTwo) < options.epsilon);
 }
