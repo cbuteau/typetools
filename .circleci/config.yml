@@ -1,6 +1,9 @@
-version: 2
+version: 2.1
+orbs:
+  win: circleci/windows@2.2.0
 jobs:
   build:
+    executor: win/default
     working_directory: ~/gitsrc
     docker:
       - image: circleci/node:jessie-browsers
