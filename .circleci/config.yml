@@ -5,7 +5,7 @@ jobs:
   build:
     executor:
       name: win/default
-      shell: powershell.exe
+      shell: cmd.exe
     working_directory: ~/gitsrc
     docker:
       - image: circleci/node:jessie-browsers
