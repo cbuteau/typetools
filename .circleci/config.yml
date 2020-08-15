@@ -3,12 +3,21 @@ jobs:
   build:
     working_directory: ~/gitsrc
     docker:
-      - image: circleci/node:7.10-jessie-browsers
+      - image: circleci/node:jessie-browsers
     environment:
       JVM_OPTS: -Xmx3200m
       NODE_ENV: false
       COVERALLS_REPO_TOKEN: HICc0XwxeBruKFxp0BdCKfGLIHGGTYQhg
     steps:
+    - run: #STABLE
+      name: Install Chromedriver latest version
+      command: |
+        sudo apt-get update
+        sudo apt-get install lsb-release libappindicator3-1
+        curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome.deb
+        sudo sed -i 's|HERE/chrome"|HERE/chrome" --no-sandbox|g' /opt/google/chrome/google-chrome
+        rm google-chrome.deb      
       - checkout
       - run:
           name: setup-for-karma
