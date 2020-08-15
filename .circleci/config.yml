@@ -28,6 +28,9 @@ jobs:
       - run:
           name: jasmine
           command: npm install -g jasmine
+      - run:
+          name: jspm
+          command: npm install -g jspm
       - restore_cache:
           key: dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
       - run:
