@@ -5,8 +5,15 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '.',
 
+    plugins: [
+      // load plugin
+      require.resolve('@open-wc/karma-esm'),
+
+      // fallback: resolve any karma- plugins
+      'karma-*',
+    ],
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -15,8 +22,8 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'src/*.js',
-      'test/*.js'
+      { pattern: 'src/*.js',  type: 'module', included: false },
+      { pattern: 'test/*.js', type: 'module' }
     ],
 
 
@@ -47,7 +54,7 @@ module.exports = function(config) {
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-    logLevel: config.LOG_INFO,
+    logLevel: config.LOG_DEBUG,
 
 
     // enable / disable watching file and executing tests whenever any file changes
@@ -65,6 +72,12 @@ module.exports = function(config) {
 
     // Concurrency level
     // how many browser should be started simultaneous
-    concurrency: Infinity
+    concurrency: Infinity,
+
+    esm: {
+      // if you are using 'bare module imports' you will need this option
+      nodeResolve: true,
+    }
+
   })
 }

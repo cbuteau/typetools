@@ -2,7 +2,7 @@
 
 let path = require('path');
 
-import typetools from "./index.js";
+import typetools from "../index.js";
 
 describe('Basic test', function() {
 

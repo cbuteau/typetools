@@ -4,7 +4,8 @@
   "description": "A port of typecodes ES5 to ES6.",
   "main": "index.js",
   "scripts": {
-    "test": "karma start"
+    "test": "karma start",
+    "testc": "karma start --single-run"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/cbuteau/typetools#readme",
   "devDependencies": {
+    "@open-wc/karma-esm": "3.0.3",
     "jasmine": "3.6.1",
     "karma": "5.1.1",
     "karma-chrome-launcher": "3.1.0",
