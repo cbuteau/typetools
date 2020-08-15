@@ -1,7 +1,7 @@
 
-import TYPECODES from "./codes.js";
+import {TYPECODES} from "./codes.js";
 
-export function function getTypeCode(value) {
+export function getTypeCode(value) {
   var result;
   // Undefined
   if (value === undefined) {

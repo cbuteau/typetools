@@ -7,22 +7,26 @@ module.exports = function(config) {
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '.',
 
+
     plugins: [
       // load plugin
       require.resolve('@open-wc/karma-esm'),
-
       // fallback: resolve any karma- plugins
-      'karma-*',
+      'karma-*'
     ],
+
+
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['esm', 'jasmine'],
+
+    //frameworks: ['esm'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      { pattern: 'src/*.js',  type: 'module', included: false },
+      { pattern: 'src/*.js',  type: 'module', included: true },
       { pattern: 'test/*.js', type: 'module' }
     ],
 
@@ -63,7 +67,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['ChromeExperiment'],
 
 
     // Continuous Integration mode
@@ -77,6 +81,25 @@ module.exports = function(config) {
     esm: {
       // if you are using 'bare module imports' you will need this option
       nodeResolve: true,
+    },
+
+    customLaunchers: {
+      ChromeExperiment: {
+        base: 'Chrome',
+        flags: [
+          '--no-sandbox', //default karma-esm configuration
+          '--disable-setuid-sandbox', //default karma-esm configuration
+          '--enable-experimental-web-platform-features' // necessary when using importMap option
+        ],
+      },
+      ChromeHeadlessNoSandbox: {
+        base: 'ChromeHeadless',
+        flags: [
+          '--no-sandbox', //default karma-esm configuration
+          '--disable-setuid-sandbox', //default karma-esm configuration
+          '--enable-experimental-web-platform-features' // necessary when using importMap option
+        ],
+      },
     }
 
   })
