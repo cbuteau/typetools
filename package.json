@@ -1,0 +1,28 @@
+{
+  "name": "typetools",
+  "version": "1.0.0",
+  "description": "A port of typecodes ES5 to ES6.",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cbuteau/typetools.git"
+  },
+  "keywords": [
+    "type"
+  ],
+  "author": "Christopher W Buteau <cbuteau@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cbuteau/typetools/issues"
+  },
+  "homepage": "https://github.com/cbuteau/typetools#readme",
+  "devDependencies": {
+    "jasmine": "3.6.1",
+    "karma": "5.1.1",
+    "karma-chrome-launcher": "3.1.0",
+    "karma-jasmine": "4.0.1"
+  }
+}
