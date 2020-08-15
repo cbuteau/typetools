@@ -6,8 +6,8 @@ jobs:
     executor:
       name: win/default
     working_directory: ~/gitsrc
-    # docker:
-    #   - image: circleci/node:jessie-browsers
+    docker:
+      - image: circleci/node:jessie-browsers
     environment:
       JVM_OPTS: -Xmx3200m
       NODE_ENV: false
