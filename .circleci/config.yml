@@ -19,17 +19,8 @@ jobs:
           name: setup-for-karma
           command: npm set prefix=/home/circleci/npm && echo 'export PATH=$HOME/circleci/npm/bin:$PATH' >> /home/circleci/.bashrc
       - run:
-          name: karma-cli
-          command: npm install -g karma-cli
-      - run:
-          name: jasmine
-          command: npm install -g jasmine
-      - run:
-          name: jspm
-          command: npm install -g jspm
-      - run:
-          name: npm
-          command: npm install -g npm
+          name: globals karma-cli, jasmine, jspm, npm
+          command: npm install -g karma-cli jasmine jspm npm
       - restore_cache:
           key: dependency-cache-{{ .Branch }}-{{ checksum "package.json" }}
       - run:
