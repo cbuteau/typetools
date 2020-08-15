@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
     // bump for ci.
     browserNoActivityTimeout: 60000,
-    browserDisconnectTimeout: 60000
+    browserDisconnectTimeout: 60000,
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '.',
