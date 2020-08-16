@@ -24,7 +24,7 @@ jobs:
       - run:
           name: setup-for-karma
           command: npm set prefix=/home/circleci/npm && echo 'export PATH=$HOME/circleci/npm/bin:$PATH' >> /home/circleci/.bashrc
-          shell: cmd.exe
+          shell: bash.exe
       - run:
           name: globals karma-cli, jasmine, jspm, npm
           command: npm install -g karma-cli jasmine jspm npm
