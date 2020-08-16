@@ -1,11 +1,13 @@
 // Karma configuration
 // Generated on Sat Aug 15 2020 04:11:22 GMT-0400 (Eastern Daylight Time)
 
+
 module.exports = function(config) {
+  'use strict';
   config.set({
     // bump for ci.
-    browserNoActivityTimeout: 120000,
-    browserDisconnectTimeout: 120000,
+    browserNoActivityTimeout: 240000,
+    browserDisconnectTimeout: 240000,
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '.',
@@ -83,7 +85,7 @@ module.exports = function(config) {
 
     esm: {
       // if you are using 'bare module imports' you will need this option
-      nodeResolve: true,
+      nodeResolve: true
     },
 
     customLaunchers: {
@@ -92,7 +94,8 @@ module.exports = function(config) {
         flags: [
           '--no-sandbox', //default karma-esm configuration
           '--disable-setuid-sandbox', //default karma-esm configuration
-          '--enable-experimental-web-platform-features' // necessary when using importMap option
+          '--enable-experimental-web-platform-features', // necessary when using importMap option
+          '--disable-web-security', '--disable-site-isolation-trials' //trying these we saw mentioned.
         ],
       },
       ChromeHeadlessNoSandbox: {

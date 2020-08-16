@@ -56,3 +56,9 @@ https://www.reddit.com/r/javascript/comments/54atmc/how_to_minify_es6/
 
 Maybe this...
 https://github.com/babel/minify
+
+##### 07:19 PM
+
+Sick of it...tests pass on my dev ssytem.
+Can't get them to run on circleci.
+Looking at github actions...next...
