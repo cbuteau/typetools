@@ -72,7 +72,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['ChromeExperiment'],
+    browsers: ['Firefox'],
 
 
     // Continuous Integration mode
@@ -89,6 +89,15 @@ module.exports = function(config) {
     },
 
     customLaunchers: {
+      EdgeExperiment: {
+        base: 'Edge',
+        flags: [
+          '--no-sandbox', //default karma-esm configuration
+          '--disable-setuid-sandbox', //default karma-esm configuration
+          '--enable-experimental-web-platform-features', // necessary when using importMap option
+          '--disable-web-security', '--disable-site-isolation-trials' //trying these we saw mentioned.
+        ],
+      },
       ChromeExperiment: {
         base: 'Chrome',
         flags: [
