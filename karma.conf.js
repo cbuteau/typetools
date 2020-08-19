@@ -8,7 +8,8 @@ module.exports = function(config) {
     // trying to help chrome work.
     browserNoActivityTimeout: 400000,
     browserDisconnectTimeout: 10000,
-    browserDisconnectTolerance: 1,
+    captureTimeout: 210000,
+    browserDisconnectTolerance: 3,
     processKillTimeout: 100000,
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '.',
