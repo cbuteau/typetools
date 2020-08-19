@@ -5,10 +5,11 @@
 module.exports = function(config) {
   'use strict';
   config.set({
-    // bump for ci.
-    browserNoActivityTimeout: 240000,
-    browserDisconnectTimeout: 240000,
-
+    // trying to help chrome work.
+    browserNoActivityTimeout: 400000,
+    browserDisconnectTimeout: 10000,
+    browserDisconnectTolerance: 1,
+    processKillTimeout: 100000,
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '.',
 
@@ -72,7 +73,7 @@ module.exports = function(config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Firefox'],
+    browsers: ['Firefox', 'ChromeExperiment'],
 
 
     // Continuous Integration mode
