@@ -2,6 +2,8 @@ version: 2.1
 
 # orbs:
 #   win: circleci/windows@2.2.0
+orbs:
+  browser-tools: circleci/browser-tools@1.0.1
 
 jobs:
   build:
@@ -11,8 +13,6 @@ jobs:
     working_directory: ~/gitsrc
     docker:
       - image: circleci/node:jessie-browsers
-    orbs:
-      browser-tools: circleci/browser-tools@1.0.1
     environment:
       JVM_OPTS: -Xmx3200m
       NODE_ENV: false
