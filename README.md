@@ -31,6 +31,33 @@ Maybe if I port the work to es6 someone will.
 
 The design will use multiple modules imported to make management of the code easier.
 
+## API
+
+### is
+
+```javascript
+
+import {typetools as tt} from "../index.js";
+
+var str = 'A fox and a hound played all day';
+if (tt.is(str, tt.CODE.STRING)) {
+  var foxIndex = str.indexOf('fox');
+  var houndIndex = str.indexOf('hound');
+}
+
+```
+
+### get
+
+
+### str
+
+### compare
+
+### deepAssign
+
+A clone that at the lowest level uses Object.assign().
+
 
 ## Status
 
