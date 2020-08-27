@@ -11,16 +11,15 @@ jobs:
     working_directory: ~/gitsrc
     docker:
       - image: circleci/node:jessie-browsers
+    orbs:
+      browser-tools: circleci/browser-tools@1.0.1
     environment:
       JVM_OPTS: -Xmx3200m
       NODE_ENV: false
       COVERALLS_REPO_TOKEN: HICc0XwxeBruKFxp0BdCKfGLIHGGTYQhg
     steps:
       - checkout
-      - run:
-          name: Chrome
-          command: |
-            circleci chrome browser install latest
+      - browser-tools/install-browser-tools
       # - run: #STABLE
       #     name: Install Chromedriver latest version
       #     command: |
