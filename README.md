@@ -1,5 +1,9 @@
 # typetools
 
+This is a PURE ES6 library do NOT load into ES5 projects.
+I will not be transpiling it at all.  If someone wants that branch and create your own project.
+This is for the future and for my own knowledge.
+
 ## Concept
 
 A port of typecodes to ES6
