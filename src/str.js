@@ -7,6 +7,9 @@ export function debugStringForTypeCode(typecode) {
     case TYPECODES.ARRAY:
       result = 'array';
       break;
+    case TYPECODES.TYPEDARRAY:
+      result = 'typedarray';
+      break;
     case TYPECODES.BOOLEAN:
       result = 'boolean';
       break;

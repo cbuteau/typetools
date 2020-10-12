@@ -9,6 +9,7 @@ export const TYPECODES = {
   NULL: 6,
   DATE: 7,
   ARRAY: 8,
-  UNMAPPED: 9,
+  TYPEDARRAY: 9,
   REGEX: 10
+  UNMAPPED: 11,
 };

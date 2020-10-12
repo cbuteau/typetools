@@ -9,9 +9,9 @@ Maybe if I port the work to es6 someone will.
 
 # Badges
 
-### Coveralls
+<!-- ### Coveralls
 
-[![Coverage Status](https://coveralls.io/repos/github/cbuteau/typetools/badge.svg)](https://coveralls.io/github/cbuteau/typetools)
+[![Coverage Status](https://coveralls.io/repos/github/cbuteau/typetools/badge.svg)](https://coveralls.io/github/cbuteau/typetools) -->
 
 ### Circle CI Build
 
@@ -62,3 +62,25 @@ https://github.com/babel/minify
 Sick of it...tests pass on my dev ssytem.
 Can't get them to run on circleci.
 Looking at github actions...next...
+
+#### 8/16/2020
+
+##### 12:35 (noon)
+
+Got build passing trying to figure out coverage.
+Apparently istanbul has been replaced with nyc.
+We might be able to do it...but have to do all the steps manually including sending the results directly to coveralls.io directly with this.
+https://github.com/okkez/coveralls-lcov
+
+Right now if I put coverage as reporter it runs but fails parsing of files.
+If I put coverage-es6 it fails to even run saying I do not have it...maybe I need plugin...
+
+Trued this which did run tests but did not actually cover code...
+https://github.com/monounity/karma-coverage-istanbul-instrumenter
+
+maybe we need a different reporter.
+
+Nest trick for simplifying the browser name.
+https://github.com/gunnarlium/babel-jspm-karma-jasmine-istanbul/blob/master/karma.conf.js
+
+where it looks like we will have to figure out coverage tools on our end then...add steps to actually upload to coveralls.io.
