@@ -1,10 +1,14 @@
 # typetools
 
+This is a PURE ES6 library do NOT load into ES5 projects.
+I will not be transpiling it at all.  If someone wants that branch and create your own project.
+This is for the future and for my own knowledge.
+
 ## Concept
 
 A port of typecodes to ES6
 I did a lot of work and testing of typecodes and no one used it.
-Maybe if I port the work to es6 someone will.
+Maybe if I port the work to es6 someone will branch it and create a transpiled project.
 
 
 # Badges
@@ -30,6 +34,79 @@ Maybe if I port the work to es6 someone will.
 ## Design
 
 The design will use multiple modules imported to make management of the code easier.
+
+## API
+
+### is
+
+```javascript
+
+import {typetools as tt} from "../index.js";
+
+var str = 'A fox and a hound played all day';
+if (tt.is(str, tt.CODE.STRING)) {
+  var foxIndex = str.indexOf('fox');
+  var houndIndex = str.indexOf('hound');
+}
+
+```
+
+### get
+
+Determines the type through duck typing and returns a code.
+
+```javascript
+import {typetools as tt} from "../index.js";
+
+var str = 'A fox and a hound played all day';
+var code = tt.get(str);
+if (code === tt.CODE.STRING) {
+  var foxIndex = str.indexOf('fox');
+  var houndIndex = str.indexOf('hound');
+}
+```
+
+### str
+
+Spits out a string to know what type was detected.
+Mostly to be used in the console while debugging.
+
+```javascript
+import {typetools as tt} from "../index.js";
+
+var str = 'A fox and a hound played all day';
+var code = tt.get(str);
+
+if (code === tt.CODE.STRING) {
+  var foxIndex = str.indexOf('fox');
+  var houndIndex = str.indexOf('hound');
+} else {
+  console.log(tt.str(code));
+}
+```
+
+
+### compare
+
+A recursive compare function that uses the type awareness to NOT compare and fail if the types to NOT match.  No string and integer matching for example.
+
+All value compares will be the === format.
+
+```javascript
+function performWork(request) {
+  var previousRequest = JSON.parse(sessionStorage.getItem('myApp.previousRequest'));
+
+  if (tt.compare(request, previousRequest)) {
+    return;
+  } else {
+    // WS call.
+  }
+}
+```
+
+### deepAssign
+
+A clone that at the lowest level uses Object.assign().
 
 
 ## Status

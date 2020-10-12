@@ -2,6 +2,8 @@ version: 2.1
 
 # orbs:
 #   win: circleci/windows@2.2.0
+orbs:
+  browser-tools: circleci/browser-tools@1.0.1
 
 jobs:
   build:
@@ -17,10 +19,16 @@ jobs:
       COVERALLS_REPO_TOKEN: HICc0XwxeBruKFxp0BdCKfGLIHGGTYQhg
     steps:
       - checkout
-      # - run:
-      #     name: Install Chrome
-      #     command: $Path = $env:TEMP; $Installer = "chrome_installer.exe"; Invoke-WebRequest "http://dl.google.com/chrome/install/375.126/chrome_installer.exe" -OutFile $Path\$Installer; Start-Process -FilePath $Path\$Installer -Args "/silent /install" -Verb RunAs -Wait; Remove-Item $Path\$Installer
-      #     shell: powershell.exe
+      - browser-tools/install-browser-tools
+      # - run: #STABLE
+      #     name: Install Chromedriver latest version
+      #     command: |
+      #       sudo apt-get update
+      #       sudo apt-get install lsb-release libappindicator3-1
+      #       curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+      #       sudo dpkg -i google-chrome.deb
+      #       sudo sed -i 's|HERE/chrome"|HERE/chrome" --no-sandbox|g' /opt/google/chrome/google-chrome
+      #       rm google-chrome.deb
       - run:
           name: setup-for-karma
           command: npm set prefix=/home/circleci/npm && echo 'export PATH=$HOME/circleci/npm/bin:$PATH' >> /home/circleci/.bashrc
