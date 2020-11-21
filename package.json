@@ -36,5 +36,8 @@
     "karma-jasmine": "4.0.1",
     "karma-spec-reporter": "0.0.32",
     "nyc": "15.1.0"
+  },
+  "dependencies": {
+    "karma-junit-reporter": "^2.0.1"
   }
 }
