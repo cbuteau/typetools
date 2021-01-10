@@ -108,6 +108,23 @@ function performWork(request) {
 
 A clone that at the lowest level uses Object.assign().
 
+```javascript
+var defaultProps = {
+  PI: Math.PI,
+  AVOGADRO: 6.022e23,
+  display: 'The quick brown fox jumped over the lazy dog.'
+};
+
+// use to combine default options with parameters passed in...
+var defaultSetting = {
+  showDialogs: true,
+  loglevel: 4
+};
+var result = tt.deepAssign(defaultSetting, {
+  loglevel: 1
+});
+
+```
 
 ## Status
 
